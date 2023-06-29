@@ -44,14 +44,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 32,
     borderRadius: 4,
     elevation: 3,
-    backgroundColor: 'black',
+    backgroundColor: '#FDDDE5',
   },
   text: {
     fontSize: 16,
     lineHeight: 21,
-    fontWeight: 'bold',
+    fontWeight: 'normal',
     letterSpacing: 0.25,
-    color: 'white',
+    color: '#000',
   },
 });
 
