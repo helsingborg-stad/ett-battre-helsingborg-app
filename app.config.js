@@ -1,8 +1,9 @@
 module.exports = {
   expo: {
-    name: 'EttBattreHelsingborg',
-    slug: 'EttBattreHelsingborg',
+    name: 'Ett bättre Helsingborg',
+    slug: 'ett-battre-helsingborg',
     version: '1.0.0',
+    owner: 'helsingborg',
     orientation: 'portrait',
     icon: './assets/icon.png',
     userInterfaceStyle: 'light',
@@ -14,27 +15,34 @@ module.exports = {
     assetBundlePatterns: ['**/*'],
     ios: {
       supportsTablet: true,
+      bundleIdentifier: 'com.infracontrol.helsingborg',
+      buildNumber: '2.0.0',
+      infoPlist: {
+        NSCameraUsageDescription:
+          'Denna app behöver åtkomst till kameran för att kunna ladda upp bilder till ärenden.',
+        NSLocationWhenInUseUsageDescription:
+          'Denna app behöver åtkomst till din plats för att visa din plats på karta.',
+      },
     },
     android: {
       permissions: [
         'INTERNET',
         'ACCESS_COARSE_LOCATION',
         'ACCESS_FINE_LOCATION',
-        'FOREGROUND_SERVICE',
         'READ_EXTERNAL_STORAGE',
       ],
       adaptiveIcon: {
         foregroundImage: './assets/adaptive-icon.png',
         backgroundColor: '#ffffff',
       },
-      package: 'com.jonatanhanson.EttBattreHelsingborg',
+      package: 'com.xxxxxxx.EttBattreHelsingborg',
     },
     web: {
       favicon: './assets/favicon.png',
     },
     extra: {
       eas: {
-        projectId: 'b9a89ae8-e86f-40e2-97eb-84ee101ce9bb',
+        projectId: 'db5f87e0-9ae7-49af-a7c2-a9da90f0db27',
       },
       webviewUrl: process.env.WEBVIEW_URL,
     },
