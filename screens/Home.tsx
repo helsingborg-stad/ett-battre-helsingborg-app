@@ -5,7 +5,7 @@ import { ImageBackground, View, Text, StyleSheet, Pressable } from 'react-native
 import Container from '../components/common/Container';
 import { HomeScreenNavigationProps } from '../types/Types';
 
-const image = require('../assets/home_screen_bg.png');
+const image = require('../assets/images/home_screen_bg.png');
 
 const Home = ({ navigation }: HomeScreenNavigationProps) => {
   return (
