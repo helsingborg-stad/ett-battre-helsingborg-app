@@ -7,7 +7,7 @@ import AppNavigator from './navigation/AppNavigator';
 
 SplashScreen.preventAutoHideAsync();
 
-export default function App() {
+const App: React.FC = () => {
   const [fontsLoaded] = useFonts({
     'Helsingborg-Sans-Bold': require('./assets/fonts/helsingborg_sans/OTF/HelsingborgSans-Bold.otf'),
     'Helsingborg-Sans-Light': require('./assets/fonts/helsingborg_sans/OTF/HelsingborgSans-Light.otf'),
@@ -17,8 +17,6 @@ export default function App() {
 
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded) {
-      //await new Promise((resolve) => setTimeout(resolve, 500));
-
       await SplashScreen.hideAsync();
     }
   }, [fontsLoaded]);
@@ -32,10 +30,12 @@ export default function App() {
       <AppNavigator />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
 });
+
+export default App;
