@@ -10,7 +10,7 @@ module.exports = {
     splash: {
       image: './assets/splash.png',
       resizeMode: 'contain',
-      backgroundColor: '#ffffff',
+      backgroundColor: '#FDDDE5',
     },
     assetBundlePatterns: ['**/*'],
     ios: {
@@ -33,7 +33,7 @@ module.exports = {
       ],
       adaptiveIcon: {
         foregroundImage: './assets/adaptive-icon.png',
-        backgroundColor: '#ffffff',
+        backgroundColor: '#FDDDE5',
       },
       package: 'com.xxxxxxx.EttBattreHelsingborg',
     },
