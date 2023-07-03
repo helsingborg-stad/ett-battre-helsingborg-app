@@ -1,9 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import SvgUri from 'expo-svg-uri';
 import React from 'react';
-import { ImageBackground, View, Text, StyleSheet, Pressable } from 'react-native';
+import { ImageBackground, View, Text, StyleSheet } from 'react-native';
 
+import Button from '../components/common/Button';
 import Container from '../components/common/Container';
+import ButtonIcon from '../components/common/icons/ErrorReportFormIcon';
 import { HomeScreenNavigationProps } from '../types/Types';
 
 const image = require('../assets/images/home_screen_bg.png');
@@ -11,18 +12,20 @@ const image = require('../assets/images/home_screen_bg.png');
 const Home: React.FC = ({ navigation }: HomeScreenNavigationProps) => {
   return (
     <Container>
-      <ImageBackground source={image} resizeMode="cover" style={styles.heroBackground}>
+      <ImageBackground source={image} resizeMode="cover" style={styles.hero}>
         <View />
         <View>
-          <Text style={styles.heroText}>Välkommen till {'\n'}Ett bättre Helsingborg</Text>
+          <Text style={styles.heading}>Välkommen till {'\n'}Ett bättre Helsingborg</Text>
         </View>
       </ImageBackground>
 
-      <View style={{ flex: 1, backgroundColor: 'transparent' }}>
-        <Pressable onPress={() => navigation.navigate('Form')} style={styles.button}>
-          <Text style={styles.buttonLabel}>Lämna synpunkt eller felanmälan</Text>
-          <Text style={styles.buttonDescription}>Hjälp oss att hålla staden hel och ren</Text>
-        </Pressable>
+      <View style={styles.content}>
+        <Button
+          onPress={() => navigation.navigate('Form')}
+          label="Lämna synpunkt eller felanmälan"
+          description="Hjälp oss att hålla staden hel och ren"
+          icon={<ButtonIcon />}
+        />
       </View>
       <StatusBar style="light" />
     </Container>
@@ -30,11 +33,11 @@ const Home: React.FC = ({ navigation }: HomeScreenNavigationProps) => {
 };
 
 const styles = StyleSheet.create({
-  heroBackground: {
+  hero: {
     flex: 1,
     justifyContent: 'space-evenly',
   },
-  heroText: {
+  heading: {
     fontFamily: 'Helsingborg-Sans-Bold',
     color: '#fff',
     textAlign: 'center',
@@ -44,28 +47,11 @@ const styles = StyleSheet.create({
     textShadowRadius: 6,
     letterSpacing: 0.5,
   },
-  button: {
-    margin: 16,
-    marginTop: 32,
-    alignItems: 'flex-start',
-    justifyContent: 'center',
-    paddingVertical: 12,
-    paddingHorizontal: 32,
-    borderRadius: 10,
-    backgroundColor: '#FDDDE5',
-  },
-  buttonLabel: {
-    fontFamily: 'Helsingborg-Sans-Medium',
-    fontSize: 19,
-    lineHeight: 30,
-    letterSpacing: 0.25,
-    color: '#000',
-  },
-  buttonDescription: {
-    //fontFamily: 'Roboto',
-    fontSize: 14,
-    lineHeight: 30,
-    color: '#000',
+  content: {
+    padding: 16,
+    paddingTop: 32,
+    flex: 1,
+    backgroundColor: 'transparent',
   },
 });
 
