@@ -1,10 +1,10 @@
 import Constants from 'expo-constants';
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { SafeAreaView } from 'react-native';
 import { WebView } from 'react-native-webview';
 
 import Container from '../components/common/Container';
+import FocusAwareStatusBar from '../components/common/StatusBar';
 
 const Form: React.FC = () => {
   return (
@@ -27,7 +27,7 @@ const Form: React.FC = () => {
           }}
         />
       </SafeAreaView>
-      <StatusBar style="dark" />
+      <FocusAwareStatusBar style="dark" backgroundColor="#fff" />
     </Container>
   );
 };

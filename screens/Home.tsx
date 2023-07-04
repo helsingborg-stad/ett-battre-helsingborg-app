@@ -1,15 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { ImageBackground, View, Text, StyleSheet } from 'react-native';
 
 import Button from '../components/common/Button';
 import Container from '../components/common/Container';
+import FocusAwareStatusBar from '../components/common/StatusBar';
 import ButtonIcon from '../components/common/icons/ErrorReportFormIcon';
 import { HomeScreenNavigationProps } from '../types/Types';
 
 const image = require('../assets/images/home_screen_bg.png');
 
-const Home: React.FC = ({ navigation }: HomeScreenNavigationProps) => {
+const Home: React.FC<HomeScreenNavigationProps> = ({ navigation }) => {
   return (
     <Container>
       <ImageBackground source={image} resizeMode="cover" style={styles.hero}>
@@ -27,7 +27,7 @@ const Home: React.FC = ({ navigation }: HomeScreenNavigationProps) => {
           icon={<ButtonIcon />}
         />
       </View>
-      <StatusBar style="light" />
+      <FocusAwareStatusBar style="light" />
     </Container>
   );
 };
