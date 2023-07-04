@@ -42,7 +42,8 @@ const styles = StyleSheet.create({
     color: '#000',
   },
   description: {
-    fontSize: 14,
+    fontFamily: 'Roboto-Regular',
+    fontSize: 13.5,
     lineHeight: 25,
     color: '#000',
   },
