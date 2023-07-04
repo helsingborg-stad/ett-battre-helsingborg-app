@@ -1,7 +1,9 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { getHeaderTitle } from '@react-navigation/elements';
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 
+import Header from '../components/common/Header';
 import Form from '../screens/Form';
 import Home from '../screens/Home';
 import { RootStackParamList } from '../types/Types';
@@ -29,6 +31,10 @@ const AppNavigator = (): JSX.Element => {
           options={{
             title: 'Lämna synpunkt eller felanmälan',
             lazy: false, // Pre loads webview in the background. Currently not working on iOS beacuse of a bug.
+            header: ({ navigation, route, options }) => {
+              const title = getHeaderTitle(options, route.name);
+              return <Header title={title} handleClosePress={() => navigation.goBack()} />;
+            },
           }}
         />
       </Tab.Navigator>
