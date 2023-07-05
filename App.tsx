@@ -3,6 +3,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import React, { useCallback } from 'react';
 import { View, StyleSheet } from 'react-native';
 
+import { WebViewProvider } from './components/common/WebView/WebViewContext';
 import AppNavigator from './navigation/AppNavigator';
 
 SplashScreen.preventAutoHideAsync();
@@ -31,7 +32,9 @@ const App: React.FC = () => {
 
   return (
     <View style={styles.container} onLayout={onLayoutRootView}>
-      <AppNavigator />
+      <WebViewProvider>
+        <AppNavigator />
+      </WebViewProvider>
     </View>
   );
 };
