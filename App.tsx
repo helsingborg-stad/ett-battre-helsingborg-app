@@ -31,11 +31,11 @@ const App: React.FC = () => {
   }
 
   return (
-    <View style={styles.container} onLayout={onLayoutRootView}>
-      <WebViewProvider>
+    <WebViewProvider>
+      <View style={styles.container} onLayout={onLayoutRootView}>
         <AppNavigator />
-      </WebViewProvider>
-    </View>
+      </View>
+    </WebViewProvider>
   );
 };
 
