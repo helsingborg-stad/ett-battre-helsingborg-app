@@ -6,7 +6,7 @@ import Container from '../components/common/Container';
 import FocusAwareStatusBar from '../components/common/StatusBar';
 import WebView from '../components/common/WebView/WebView';
 
-const Form: React.FC = () => {
+const FormScreen: React.FC = () => {
   return (
     <Container>
       <SafeAreaView style={{ flex: 1 }}>
@@ -17,4 +17,4 @@ const Form: React.FC = () => {
   );
 };
 
-export default Form;
+export default FormScreen;

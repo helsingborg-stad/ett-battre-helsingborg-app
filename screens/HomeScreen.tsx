@@ -9,7 +9,7 @@ import { HomeScreenNavigationProps } from '../types/Types';
 
 const image = require('../assets/images/home_screen_bg.png');
 
-const Home: React.FC<HomeScreenNavigationProps> = ({ navigation }) => {
+const HomeScreen: React.FC<HomeScreenNavigationProps> = ({ navigation }) => {
   return (
     <Container>
       <ImageBackground source={image} resizeMode="cover" style={styles.hero}>
@@ -55,4 +55,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Home;
+export default HomeScreen;
