@@ -12,7 +12,9 @@ import { RootStackParamList } from '../types/Types';
 const Tab = createBottomTabNavigator<RootStackParamList>();
 
 const AppNavigator = (): JSX.Element => {
-  const { reloadWebView, navigatePreviousStep, webViewRef } = useWebView();
+  const { reloadWebView, navigatePreviousStep, webViewRef, currentStep } = useWebView();
+
+  console.log('currentStep: ' + currentStep);
 
   return (
     <NavigationContainer>
@@ -46,6 +48,7 @@ const AppNavigator = (): JSX.Element => {
                   handlePreviousPress={() => {
                     navigatePreviousStep(webViewRef);
                   }}
+                  showPreviousPress={currentStep !== 0}
                 />
               );
             },

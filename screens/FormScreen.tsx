@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native';
 
 import Container from '../components/common/Container';
 import FocusAwareStatusBar from '../components/common/StatusBar';
-import Navigation from '../components/screens/FormScreen/Navigation';
+import Navigation from '../components/screens/FormScreen/FormNavigation';
 import WebView from '../components/screens/FormScreen/WebView/WebView';
 
 const FormScreen: React.FC = () => {
