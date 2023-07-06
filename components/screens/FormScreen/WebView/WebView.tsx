@@ -8,14 +8,22 @@ interface WebViewProps {
 }
 
 const WebView: React.FC<WebViewProps> = ({ url }) => {
-  const { viewKey, webViewRef, updateCurrentStep } = useWebView();
+  const { viewKey, webViewRef, updateCurrentStep, updateIsSubmitted } = useWebView();
 
   const handleMessage = (event) => {
     const message = event.nativeEvent.data;
-    const receivedObject = JSON.parse(message);
 
-    if (typeof receivedObject === 'object' && 'to' in receivedObject) {
-      updateCurrentStep(receivedObject.to.index);
+    const receivedObject = JSON.parse(message);
+    console.log(receivedObject);
+
+    if (typeof receivedObject === 'object') {
+      if ('to' in receivedObject) {
+        updateCurrentStep(receivedObject.to.index);
+      }
+
+      if ('submitted' in receivedObject && receivedObject.submitted === true) {
+        updateIsSubmitted(true);
+      }
     }
   };
 
@@ -23,6 +31,12 @@ const WebView: React.FC<WebViewProps> = ({ url }) => {
     var formsApi = window.limeForms.getApi();
     formsApi.onStepChange((from,to) => {
       const navObject = { from, to };
+      const message = JSON.stringify(navObject);
+      window.ReactNativeWebView.postMessage(message);
+    });
+
+    formsApi.onSubmitted(() => {
+      const navObject = { submitted: true };
       const message = JSON.stringify(navObject);
       window.ReactNativeWebView.postMessage(message);
     });

@@ -9,6 +9,8 @@ export interface WebViewContextType {
   webViewRef: RefObject<RNWebView>;
   currentStep: number;
   updateCurrentStep: (value: number) => void;
+  isSubmitted: boolean;
+  updateIsSubmitted: (value: boolean) => void;
 }
 
 const WebViewContext = createContext<WebViewContextType>({
@@ -19,6 +21,8 @@ const WebViewContext = createContext<WebViewContextType>({
   webViewRef: null,
   currentStep: 0,
   updateCurrentStep: () => {},
+  isSubmitted: false,
+  updateIsSubmitted: () => {},
 });
 
 export const useWebView = () => useContext(WebViewContext);
@@ -29,12 +33,17 @@ interface ProviderProps {
 
 export const WebViewProvider: React.FC<ProviderProps> = ({ children }) => {
   const [viewKey, setViewKey] = useState(0);
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
   const webViewRef = useRef<RNWebView | null>(null);
+
+  console.log('Current step: ' + currentStep);
+  console.log('Is submitted: ' + isSubmitted);
 
   const reloadWebView = () => {
     setViewKey(viewKey + 1);
     setCurrentStep(0);
+    setIsSubmitted(false);
   };
 
   const navigatePreviousStep = (ref: RefObject<RNWebView>) => {
@@ -62,8 +71,11 @@ export const WebViewProvider: React.FC<ProviderProps> = ({ children }) => {
   };
 
   const updateCurrentStep = (value: number) => {
-    console.log('update current step');
     setCurrentStep(value);
+  };
+
+  const updateIsSubmitted = (value: boolean) => {
+    setIsSubmitted(value);
   };
 
   return (
@@ -76,6 +88,8 @@ export const WebViewProvider: React.FC<ProviderProps> = ({ children }) => {
         webViewRef,
         currentStep,
         updateCurrentStep,
+        isSubmitted,
+        updateIsSubmitted,
       }}>
       {children}
     </WebViewContext.Provider>

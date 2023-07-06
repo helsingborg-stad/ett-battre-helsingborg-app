@@ -21,7 +21,9 @@ const HomeScreen: React.FC<HomeScreenNavigationProps> = ({ navigation }) => {
 
       <View style={styles.content}>
         <Button
-          onPress={() => navigation.navigate('Form')}
+          onPress={() => {
+            navigation.navigate('Form');
+          }}
           label="Lämna synpunkt eller felanmälan"
           description="Hjälp oss att hålla staden hel och ren"
           icon={<ButtonIcon />}
