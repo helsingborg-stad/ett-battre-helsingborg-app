@@ -12,7 +12,7 @@ const FormScreen: React.FC = () => {
     <Container>
       <SafeAreaView style={{ flex: 1 }}>
         <WebView url={Constants.expoConfig.extra.webviewUrl} />
-        <Navigation />
+        {/* <Navigation /> */}
       </SafeAreaView>
       <FocusAwareStatusBar style="dark" backgroundColor="#fff" />
     </Container>

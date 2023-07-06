@@ -14,8 +14,6 @@ const Tab = createBottomTabNavigator<RootStackParamList>();
 const AppNavigator = (): JSX.Element => {
   const { reloadWebView, navigatePreviousStep, webViewRef, currentStep } = useWebView();
 
-  console.log('currentStep: ' + currentStep);
-
   return (
     <NavigationContainer>
       <Tab.Navigator

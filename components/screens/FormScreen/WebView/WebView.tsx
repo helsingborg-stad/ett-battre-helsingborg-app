@@ -1,5 +1,4 @@
 import React from 'react';
-import { View } from 'react-native';
 import { WebView as RNWebView } from 'react-native-webview';
 
 import { useWebView } from './WebViewContext';
@@ -16,8 +15,6 @@ const WebView: React.FC<WebViewProps> = ({ url }) => {
     const receivedObject = JSON.parse(message);
 
     if (typeof receivedObject === 'object' && 'to' in receivedObject) {
-      console.log(receivedObject.to.name);
-      console.log(receivedObject.to.index);
       updateCurrentStep(receivedObject.to.index);
     }
   };
@@ -34,28 +31,26 @@ const WebView: React.FC<WebViewProps> = ({ url }) => {
   `;
 
   return (
-    <View style={{ flex: 1 }}>
-      <RNWebView
-        key={viewKey}
-        ref={webViewRef}
-        originWhitelist={['*']}
-        source={{
-          uri: url,
-        }}
-        javaScriptEnabled
-        domStorageEnabled
-        geolocationEnabled
-        allowFileAccess
-        cacheEnabled={false}
-        allowsFullscreenVideo
-        style={{
-          flex: 1,
-          backgroundColor: 'transparent',
-        }}
-        onMessage={(event) => handleMessage(event)}
-        injectedJavaScript={injectedJavaScript}
-      />
-    </View>
+    <RNWebView
+      key={viewKey}
+      ref={webViewRef}
+      originWhitelist={['*']}
+      source={{
+        uri: url,
+      }}
+      javaScriptEnabled
+      domStorageEnabled
+      geolocationEnabled
+      allowFileAccess
+      cacheEnabled={false}
+      allowsFullscreenVideo
+      style={{
+        flex: 1,
+        backgroundColor: 'transparent',
+      }}
+      onMessage={(event) => handleMessage(event)}
+      injectedJavaScript={injectedJavaScript}
+    />
   );
 };
 
