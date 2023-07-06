@@ -3,7 +3,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import React, { useCallback } from 'react';
 import { View, StyleSheet } from 'react-native';
 
-import { WebViewProvider } from './components/common/WebView/WebViewContext';
+import { WebViewProvider } from './components/screens/FormScreen/WebView/WebViewContext';
 import AppNavigator from './navigation/AppNavigator';
 
 SplashScreen.preventAutoHideAsync();

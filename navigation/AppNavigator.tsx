@@ -3,8 +3,8 @@ import { getHeaderTitle } from '@react-navigation/elements';
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 
-import Header from '../components/common/Header';
-import { useWebView } from '../components/common/WebView/WebViewContext';
+import Header from '../components/screens/FormScreen/Header';
+import { useWebView } from '../components/screens/FormScreen/WebView/WebViewContext';
 import Form from '../screens/FormScreen';
 import Home from '../screens/HomeScreen';
 import { RootStackParamList } from '../types/Types';
@@ -12,7 +12,7 @@ import { RootStackParamList } from '../types/Types';
 const Tab = createBottomTabNavigator<RootStackParamList>();
 
 const AppNavigator = (): JSX.Element => {
-  const { reloadWebView } = useWebView();
+  const { reloadWebView, navigatePreviousStep, webViewRef } = useWebView();
 
   return (
     <NavigationContainer>
@@ -42,6 +42,9 @@ const AppNavigator = (): JSX.Element => {
                   handleClosePress={() => {
                     reloadWebView();
                     navigation.goBack();
+                  }}
+                  handlePreviousPress={() => {
+                    navigatePreviousStep(webViewRef);
                   }}
                 />
               );
