@@ -42,7 +42,7 @@ const AppNavigator = (): JSX.Element => {
                   title={title}
                   handleClosePress={() => {
                     reloadWebView();
-                    navigation.goBack();
+                    navigation.navigate('Home');
                   }}
                   handlePreviousPress={() => {
                     navigatePreviousStep(webViewRef);
