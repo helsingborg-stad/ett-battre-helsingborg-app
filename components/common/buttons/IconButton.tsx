@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'center',
   },
-  icon: { marginRight: 16 },
+  icon: { marginRight: 12 },
   label: {
     fontFamily: 'Helsingborg-Sans-Medium',
     fontSize: 17,
