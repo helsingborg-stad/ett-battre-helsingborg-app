@@ -8,7 +8,7 @@ interface ButtonProps {
   icon?: React.ReactNode;
 }
 
-const Button: React.FC<ButtonProps> = ({ onPress, label, description = '', icon }) => {
+const IconButton: React.FC<ButtonProps> = ({ onPress, label, description = '', icon }) => {
   return (
     <TouchableHighlight onPress={onPress} underlayColor="#fccfda" style={styles.button}>
       <View style={styles.content}>
@@ -49,4 +49,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Button;
+export default IconButton;
