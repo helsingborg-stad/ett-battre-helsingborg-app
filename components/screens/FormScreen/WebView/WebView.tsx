@@ -1,3 +1,4 @@
+import * as Linking from 'expo-linking';
 import React from 'react';
 import { WebView as RNWebView } from 'react-native-webview';
 
@@ -9,23 +10,6 @@ interface WebViewProps {
 
 const WebView: React.FC<WebViewProps> = ({ url }) => {
   const { viewKey, webViewRef, updateCurrentStep, updateIsSubmitted } = useWebView();
-
-  const handleMessage = (event) => {
-    const message = event.nativeEvent.data;
-
-    const receivedObject = JSON.parse(message);
-    console.log(receivedObject);
-
-    if (typeof receivedObject === 'object') {
-      if ('to' in receivedObject) {
-        updateCurrentStep(receivedObject.to.index);
-      }
-
-      if ('submitted' in receivedObject && receivedObject.submitted === true) {
-        updateIsSubmitted(true);
-      }
-    }
-  };
 
   const injectedJavaScript = `
     var formsApi = window.limeForms.getApi();
@@ -43,6 +27,32 @@ const WebView: React.FC<WebViewProps> = ({ url }) => {
 
     true;
   `;
+
+  const handleMessage = (event: { nativeEvent: { data: string } }) => {
+    const message = event.nativeEvent.data;
+    const receivedObject = JSON.parse(message);
+
+    if (typeof receivedObject === 'object') {
+      if ('to' in receivedObject) {
+        updateCurrentStep(receivedObject.to.index);
+      }
+
+      if ('submitted' in receivedObject && receivedObject.submitted === true) {
+        updateIsSubmitted(true);
+      }
+    }
+  };
+
+  const handleShouldStartLoadWithRequest = (event: { url: string }) => {
+    const { url: linkUrl } = event;
+
+    if (url.startsWith('http') && linkUrl !== url) {
+      Linking.openURL(linkUrl);
+      return false;
+    }
+
+    return true;
+  };
 
   return (
     <RNWebView
@@ -64,6 +74,7 @@ const WebView: React.FC<WebViewProps> = ({ url }) => {
       }}
       onMessage={(event) => handleMessage(event)}
       injectedJavaScript={injectedJavaScript}
+      onShouldStartLoadWithRequest={(event) => handleShouldStartLoadWithRequest(event)}
     />
   );
 };
