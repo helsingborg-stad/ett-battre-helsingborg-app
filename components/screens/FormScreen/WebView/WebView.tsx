@@ -43,6 +43,7 @@ const WebView: React.FC<WebViewProps> = ({ url }) => {
     }
   };
 
+  // Open clickable links in browser
   const handleShouldStartLoadWithRequest = (event: { url: string }) => {
     const { url: linkUrl } = event;
 
