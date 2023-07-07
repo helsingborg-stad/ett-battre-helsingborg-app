@@ -1,10 +1,10 @@
 import React from 'react';
 import { ImageBackground, View, Text, StyleSheet } from 'react-native';
 
-import Button from '../components/common/Button';
 import Container from '../components/common/Container';
 import FocusAwareStatusBar from '../components/common/StatusBar';
-import ButtonIcon from '../components/common/icons/ErrorReportFormIcon';
+import IconButton from '../components/common/buttons/IconButton';
+import ErrorReportFormIcon from '../components/common/icons/ErrorReportFormIcon';
 import { HomeScreenNavigationProps } from '../types/Types';
 
 const image = require('../assets/images/home_screen_bg.png');
@@ -20,13 +20,13 @@ const HomeScreen: React.FC<HomeScreenNavigationProps> = ({ navigation }) => {
       </ImageBackground>
 
       <View style={styles.content}>
-        <Button
+        <IconButton
           onPress={() => {
             navigation.navigate('Form');
           }}
           label="Lämna synpunkt eller felanmälan"
           description="Hjälp oss att hålla staden hel och ren"
-          icon={<ButtonIcon />}
+          icon={<ErrorReportFormIcon />}
         />
       </View>
       <FocusAwareStatusBar style="light" />

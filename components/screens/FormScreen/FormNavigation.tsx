@@ -1,27 +1,38 @@
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 
 import { useWebView } from './WebView/WebViewContext';
-import Button from '../../common/Button';
+import { RootStackParamList } from '../../../types/Types';
+import Button from '../../common/buttons/Button';
 
-const Navigation: React.FC = () => {
-  const { navigateNextStep, webViewRef } = useWebView();
+type FormNavigationProps = {
+  navigation: NativeStackNavigationProp<RootStackParamList, 'Form'>;
+};
+
+const FormNavigation: React.FC<FormNavigationProps> = ({ navigation }) => {
+  const { isSubmitted, reloadWebView } = useWebView();
 
   return (
     <View style={styles.container}>
-      <Button label="Next" onPress={() => navigateNextStep(webViewRef)} />
+      {isSubmitted && (
+        <Button
+          label="Stäng"
+          onPress={() => {
+            reloadWebView();
+            navigation.navigate('Home');
+          }}
+        />
+      )}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
+    padding: 16,
     backgroundColor: 'transparent',
   },
 });
 
-export default Navigation;
+export default FormNavigation;

@@ -37,9 +37,6 @@ export const WebViewProvider: React.FC<ProviderProps> = ({ children }) => {
   const [currentStep, setCurrentStep] = useState(0);
   const webViewRef = useRef<RNWebView | null>(null);
 
-  console.log('Current step: ' + currentStep);
-  console.log('Is submitted: ' + isSubmitted);
-
   const reloadWebView = () => {
     setViewKey(viewKey + 1);
     setCurrentStep(0);

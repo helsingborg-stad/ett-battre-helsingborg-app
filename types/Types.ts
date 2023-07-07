@@ -6,3 +6,4 @@ export type RootStackParamList = {
 };
 
 export type HomeScreenNavigationProps = NativeStackScreenProps<RootStackParamList, 'Form'>;
+export type FormScreenNavigationProps = NativeStackScreenProps<RootStackParamList, 'Home'>;
