@@ -12,11 +12,9 @@ const image = require('../assets/images/home_screen_bg.png');
 const HomeScreen: React.FC<HomeScreenNavigationProps> = ({ navigation }) => {
   return (
     <Container>
-      <ImageBackground source={image} resizeMode="cover" style={styles.hero}>
-        <View />
-        <View>
-          <Text style={styles.heading}>Välkommen till {'\n'}Ett bättre Helsingborg</Text>
-        </View>
+      <ImageBackground source={image} resizeMode="cover" style={styles.imageBackground}>
+        {/* <View /> */}
+        <Text style={styles.heading}>Välkommen till {'\n'}Ett bättre Helsingborg</Text>
       </ImageBackground>
 
       <View style={styles.content}>
@@ -24,7 +22,7 @@ const HomeScreen: React.FC<HomeScreenNavigationProps> = ({ navigation }) => {
           onPress={() => {
             navigation.navigate('Form');
           }}
-          label="Lämna synpunkt eller felanmälan"
+          label="Lämna en felanmälan"
           description="Hjälp oss att hålla staden hel och ren. Lämna din felanmälan eller synpunkt här."
           icon={<Ionicons name="add-circle-outline" size={32} color="#000" />}
         />
@@ -35,9 +33,8 @@ const HomeScreen: React.FC<HomeScreenNavigationProps> = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  hero: {
-    flex: 1,
-    justifyContent: 'space-evenly',
+  imageBackground: {
+    flex: 3,
   },
   heading: {
     fontFamily: 'Helsingborg-Sans-Bold',
@@ -48,11 +45,13 @@ const styles = StyleSheet.create({
     textShadowOffset: { width: 1, height: 3 },
     textShadowRadius: 6,
     letterSpacing: 0.5,
+    marginTop: 'auto',
+    marginBottom: 50,
   },
   content: {
+    flex: 2,
     padding: 16,
     paddingTop: 32,
-    flex: 1,
     backgroundColor: 'transparent',
   },
 });
