@@ -11,9 +11,9 @@ interface ButtonProps {
 const IconButton: React.FC<ButtonProps> = ({ onPress, label, description = '', icon }) => {
   return (
     <TouchableHighlight onPress={onPress} underlayColor="#fccfda" style={styles.button}>
-      <View style={styles.content}>
+      <View style={styles.wrapper}>
         {icon && <View style={styles.icon}>{icon}</View>}
-        <View>
+        <View style={styles.textWrapper}>
           {label && <Text style={styles.label}>{label}</Text>}
           {description && <Text style={styles.description}>{description}</Text>}
         </View>
@@ -28,23 +28,27 @@ const styles = StyleSheet.create({
     backgroundColor: '#FDDDE5',
     padding: 24,
   },
-  content: {
+  wrapper: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
   },
+  textWrapper: {
+    gap: 10,
+    flexShrink: 1,
+  },
   icon: { marginRight: 12 },
   label: {
+    flexWrap: 'wrap',
     fontFamily: 'Helsingborg-Sans-Medium',
     fontSize: 17,
-    lineHeight: 25,
     letterSpacing: 0.25,
     color: '#000',
   },
   description: {
+    flexShrink: 1,
     fontFamily: 'Roboto-Regular',
     fontSize: 13.5,
-    lineHeight: 25,
     color: '#000',
   },
 });
