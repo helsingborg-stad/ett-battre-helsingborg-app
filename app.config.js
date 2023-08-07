@@ -2,7 +2,7 @@ module.exports = {
   expo: {
     name: 'Ett bättre Helsingborg',
     slug: 'ett-battre-helsingborg',
-    version: '1.0.0',
+    version: '2.0.0',
     owner: 'helsingborg',
     orientation: 'portrait',
     icon: './assets/icon.png',
@@ -16,7 +16,7 @@ module.exports = {
     ios: {
       supportsTablet: true,
       bundleIdentifier: 'com.infracontrol.helsingborg',
-      buildNumber: '2.0.0',
+      buildNumber: '1',
       infoPlist: {
         NSCameraUsageDescription:
           'Denna app behöver åtkomst till kameran för att kunna ladda upp bilder till ärenden.',
@@ -25,6 +25,7 @@ module.exports = {
       },
     },
     android: {
+      versionCode: '1',
       permissions: [
         'INTERNET',
         'ACCESS_COARSE_LOCATION',
