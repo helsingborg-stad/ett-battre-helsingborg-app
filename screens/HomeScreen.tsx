@@ -1,6 +1,6 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
 import React from 'react';
-import { ImageBackground, View, Text, StyleSheet } from 'react-native';
+import { ImageBackground, View, Text, StyleSheet, SafeAreaView } from 'react-native';
 
 import Container from '../components/common/Container';
 import FocusAwareStatusBar from '../components/common/StatusBar';
@@ -13,10 +13,10 @@ const HomeScreen: React.FC<HomeScreenNavigationProps> = ({ navigation }) => {
   return (
     <Container>
       <ImageBackground source={image} resizeMode="cover" style={styles.imageBackground}>
-        {/* <View /> */}
-        <Text style={styles.heading}>Välkommen till {'\n'}Ett bättre Helsingborg</Text>
+        <SafeAreaView style={{ flex: 1 }}>
+          <Text style={styles.heading}>Välkommen till {'\n'}Ett bättre Helsingborg</Text>
+        </SafeAreaView>
       </ImageBackground>
-
       <View style={styles.content}>
         <IconButton
           onPress={() => {
@@ -35,6 +35,8 @@ const HomeScreen: React.FC<HomeScreenNavigationProps> = ({ navigation }) => {
 const styles = StyleSheet.create({
   imageBackground: {
     flex: 3,
+    paddingBottom: 50,
+    paddingHorizontal: 16,
   },
   heading: {
     fontFamily: 'Helsingborg-Sans-Bold',
@@ -46,7 +48,6 @@ const styles = StyleSheet.create({
     textShadowRadius: 6,
     letterSpacing: 0.5,
     marginTop: 'auto',
-    marginBottom: 50,
   },
   content: {
     flex: 2,
