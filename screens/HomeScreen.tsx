@@ -25,7 +25,7 @@ const HomeScreen: React.FC<HomeScreenNavigationProps> = ({ navigation }) => {
             navigation.navigate('Form');
           }}
           label="Lämna synpunkt eller felanmälan"
-          description="Hjälp oss att hålla staden hel och ren"
+          description="Hjälp oss att hålla staden hel och ren. Lämna din felanmälan eller synpunkt här."
           icon={<Ionicons name="add-circle-outline" size={32} color="#000" />}
         />
       </View>
