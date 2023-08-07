@@ -33,7 +33,7 @@ const AppNavigator = (): JSX.Element => {
           name="Form"
           component={Form}
           options={{
-            title: 'Lämna synpunkt eller felanmälan',
+            title: 'Lämna en felanmälan',
             lazy: false, // Pre loads webview in the background. Currently not working on iOS beacuse of a bug.
             header: ({ navigation, route, options }) => {
               const title = getHeaderTitle(options, route.name);
