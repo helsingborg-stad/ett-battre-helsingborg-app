@@ -13,9 +13,9 @@ type FormNavigationProps = {
 const FormNavigation: React.FC<FormNavigationProps> = ({ navigation }) => {
   const { isSubmitted, reloadWebView } = useWebView();
 
-  return (
-    <View style={styles.container}>
-      {isSubmitted && (
+  if (isSubmitted) {
+    return (
+      <View style={styles.container}>
         <Button
           label="Stäng"
           onPress={() => {
@@ -23,14 +23,14 @@ const FormNavigation: React.FC<FormNavigationProps> = ({ navigation }) => {
             navigation.navigate('Home');
           }}
         />
-      )}
-    </View>
-  );
+      </View>
+    );
+  }
 };
 
 const styles = StyleSheet.create({
   container: {
-    padding: 16,
+    paddingHorizontal: 16,
     backgroundColor: 'transparent',
   },
 });

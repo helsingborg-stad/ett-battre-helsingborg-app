@@ -1,7 +1,7 @@
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import React, { useCallback } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 
 import { WebViewProvider } from './components/screens/FormScreen/WebView/WebViewContext';
 import AppNavigator from './navigation/AppNavigator';
@@ -32,17 +32,11 @@ const App: React.FC = () => {
 
   return (
     <WebViewProvider>
-      <View style={styles.container} onLayout={onLayoutRootView}>
+      <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
         <AppNavigator />
       </View>
     </WebViewProvider>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
 
 export default App;
