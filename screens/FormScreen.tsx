@@ -1,4 +1,3 @@
-import Constants from 'expo-constants';
 import React from 'react';
 import { SafeAreaView } from 'react-native';
 
@@ -11,7 +10,7 @@ import { HomeScreenNavigationProps } from '../types/Types';
 const FormScreen: React.FC<HomeScreenNavigationProps> = ({ navigation }) => {
   return (
     <Container>
-      <WebView url={Constants.expoConfig.extra.webviewUrl} />
+      <WebView url={process.env.EXPO_PUBLIC_WEBVIEW_URL} />
       <FormNavigation navigation={navigation} />
       <SafeAreaView />
       <FocusAwareStatusBar style="dark" backgroundColor="transparent" />

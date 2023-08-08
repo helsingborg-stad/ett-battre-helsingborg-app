@@ -9,7 +9,7 @@
       "developmentClient": true,
       "distribution": "internal",
       "env": {
-        "WEBVIEW_URL": "https://helsingborg-stad.github.io/ett-battre-helsingborg-web/"
+        "EXPO_PUBLIC_WEBVIEW_URL": "https://helsingborg-stad.github.io/ett-battre-helsingborg-web/"
       }
     },
     "preview": {
@@ -18,12 +18,12 @@
       },
       "distribution": "internal",
       "env": {
-        "WEBVIEW_URL": "https://helsingborg-stad.github.io/ett-battre-helsingborg-web/"
+        "EXPO_PUBLIC_WEBVIEW_URL": "https://helsingborg-stad.github.io/ett-battre-helsingborg-web/"
       }
     },
     "production": {
       "env" : {
-        "WEBVIEW_URL": "https://helsingborg-stad.github.io/ett-battre-helsingborg-web/"
+        "EXPO_PUBLIC_WEBVIEW_URL": "https://helsingborg-stad.github.io/ett-battre-helsingborg-web/"
       }
     }
   },

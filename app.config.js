@@ -25,7 +25,7 @@ module.exports = {
       },
     },
     android: {
-      versionCode: '1',
+      versionCode: 1,
       permissions: [
         'INTERNET',
         'ACCESS_COARSE_LOCATION',
@@ -45,7 +45,6 @@ module.exports = {
       eas: {
         projectId: 'db5f87e0-9ae7-49af-a7c2-a9da90f0db27',
       },
-      webviewUrl: process.env.WEBVIEW_URL,
     },
   },
 };
