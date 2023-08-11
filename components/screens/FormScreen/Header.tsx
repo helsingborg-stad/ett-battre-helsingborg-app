@@ -1,7 +1,7 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 interface HeaderProps {
   title: string;
@@ -16,8 +16,10 @@ const Header: React.FC<HeaderProps> = ({
   handlePreviousPress,
   showPreviousPress = true,
 }) => {
+  const insets = useSafeAreaInsets();
+
   return (
-    <SafeAreaView edges={['top']} style={styles.safeArea}>
+    <View style={{ paddingTop: insets.top }}>
       <View style={styles.header}>
         <View style={styles.backButtonContainer}>
           {showPreviousPress && (
@@ -32,7 +34,7 @@ const Header: React.FC<HeaderProps> = ({
           <Ionicons name="close" size={24} color="#000" />
         </TouchableOpacity>
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 
