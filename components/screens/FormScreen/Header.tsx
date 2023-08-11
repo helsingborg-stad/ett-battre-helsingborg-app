@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     height: 60,
     borderBottomWidth: StyleSheet.hairlineWidth,
-    borderBottomColor: '#ccc',
+    borderBottomColor: '#8E8E8E',
   },
   title: {
     fontFamily: 'Roboto-Regular',
