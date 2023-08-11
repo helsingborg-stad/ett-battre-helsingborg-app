@@ -2,6 +2,7 @@ import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import React, { useCallback } from 'react';
 import { View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { WebViewProvider } from './components/screens/FormScreen/WebView/WebViewContext';
 import AppNavigator from './navigation/AppNavigator';
@@ -31,11 +32,13 @@ const App: React.FC = () => {
   }
 
   return (
-    <WebViewProvider>
-      <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
-        <AppNavigator />
-      </View>
-    </WebViewProvider>
+    <SafeAreaProvider>
+      <WebViewProvider>
+        <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
+          <AppNavigator />
+        </View>
+      </WebViewProvider>
+    </SafeAreaProvider>
   );
 };
 
