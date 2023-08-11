@@ -1,5 +1,4 @@
 import React from 'react';
-import { SafeAreaView } from 'react-native';
 
 import Container from '../components/common/Container';
 import FocusAwareStatusBar from '../components/common/StatusBar';
@@ -12,7 +11,6 @@ const FormScreen: React.FC<HomeScreenNavigationProps> = ({ navigation }) => {
     <Container>
       <WebView url={process.env.EXPO_PUBLIC_WEBVIEW_URL} />
       <FormNavigation navigation={navigation} />
-      <SafeAreaView />
       <FocusAwareStatusBar style="dark" backgroundColor="transparent" />
     </Container>
   );
