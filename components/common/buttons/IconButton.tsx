@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   label: {
     flexWrap: 'wrap',
     fontFamily: 'Helsingborg-Sans-Medium',
-    fontSize: 20,
+    fontSize: 19,
     letterSpacing: 0.25,
     color: '#000',
   },
