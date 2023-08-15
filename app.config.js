@@ -2,7 +2,7 @@ module.exports = {
   expo: {
     name: 'Ett bättre Helsingborg',
     slug: 'ett-battre-helsingborg',
-    version: '2.0.0',
+    version: '2.0.1',
     owner: 'helsingborg',
     orientation: 'portrait',
     icon: './assets/icon.png',
