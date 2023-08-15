@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: 'Roboto-Regular',
-    fontSize: 16,
+    fontSize: 18,
   },
   button: {
     width: 40,

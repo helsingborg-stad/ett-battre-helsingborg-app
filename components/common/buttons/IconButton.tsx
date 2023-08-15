@@ -41,14 +41,14 @@ const styles = StyleSheet.create({
   label: {
     flexWrap: 'wrap',
     fontFamily: 'Helsingborg-Sans-Medium',
-    fontSize: 16,
+    fontSize: 20,
     letterSpacing: 0.25,
     color: '#000',
   },
   description: {
     flexShrink: 1,
     fontFamily: 'Roboto-Regular',
-    fontSize: 13.5,
+    fontSize: 15,
     color: '#000',
   },
 });
