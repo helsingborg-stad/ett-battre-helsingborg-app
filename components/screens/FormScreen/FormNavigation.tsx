@@ -31,6 +31,7 @@ const FormNavigation: React.FC<FormNavigationProps> = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     padding: 16,
+    paddingBottom: 32,
     backgroundColor: 'transparent',
   },
 });
