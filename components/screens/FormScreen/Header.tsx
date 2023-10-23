@@ -22,16 +22,19 @@ const Header: React.FC<HeaderProps> = ({
     <View style={{ paddingTop: insets.top }}>
       <View style={styles.header}>
         <View style={styles.backButtonContainer}>
-          {showPreviousPress && (
+          {showPreviousPress ? (
             <TouchableOpacity onPress={handlePreviousPress} style={styles.button}>
               <Ionicons name="chevron-back-outline" size={24} color="#000" />
+              <Text style={{ fontFamily: 'Roboto-Regular', fontSize: 20 }}>Tillbaka</Text>
             </TouchableOpacity>
+          ) : (
+            <View style={styles.placeholder} />
           )}
         </View>
 
         <Text style={styles.title}>{title}</Text>
         <TouchableOpacity onPress={handleClosePress} style={styles.button}>
-          <Ionicons name="close" size={24} color="#000" />
+          <Text style={{ fontFamily: 'Roboto-Regular', fontSize: 20 }}>Avbryt</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -56,12 +59,19 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   button: {
+    width: 80,
+    height: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
+  placeholder: {
     width: 40,
     height: 40,
     padding: 8,
   },
   backButtonContainer: {
-    width: 40,
+    width: 80,
     height: 40,
     justifyContent: 'center', // Center the content vertically
     alignItems: 'center', // Center the content horizontally
