@@ -45,9 +45,10 @@ const AppNavigator = (): JSX.Element => {
                     navigation.navigate('Home');
                   }}
                   handlePreviousPress={() => {
-                    navigatePreviousStep(webViewRef);
+                    currentStep === 0
+                      ? (reloadWebView(), navigation.navigate('Home'))
+                      : navigatePreviousStep(webViewRef);
                   }}
-                  showPreviousPress={currentStep !== 0 && isSubmitted === false}
                 />
               );
             },
