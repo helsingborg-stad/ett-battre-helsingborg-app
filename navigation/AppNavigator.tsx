@@ -39,7 +39,7 @@ const AppNavigator = (): JSX.Element => {
               const title = getHeaderTitle(options, route.name);
               return (
                 <Header
-                  title={title}
+                  title={""}
                   handleClosePress={() => {
                     reloadWebView();
                     navigation.navigate('Home');
