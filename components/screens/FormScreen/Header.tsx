@@ -25,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({
           {showPreviousPress ? (
             <TouchableOpacity onPress={handlePreviousPress} style={styles.button}>
               <Ionicons name="chevron-back-outline" size={24} color="#000" />
-              <Text style={{ fontFamily: 'Roboto-Regular', fontSize: 20 }}>Tillbaka</Text>
+              <Text style={styles.buttonText}>Tillbaka</Text>
             </TouchableOpacity>
           ) : (
             <View style={styles.placeholder} />
@@ -34,7 +34,7 @@ const Header: React.FC<HeaderProps> = ({
 
         <Text style={styles.title}>{title}</Text>
         <TouchableOpacity onPress={handleClosePress} style={styles.button}>
-          <Text style={{ fontFamily: 'Roboto-Regular', fontSize: 20 }}>Avbryt</Text>
+          <Text style={styles.buttonText}>Avbryt</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -64,6 +64,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
+  },
+  buttonText: {
+    fontFamily: 'Roboto-Regular',
+    fontSize: 18,
   },
   placeholder: {
     width: 40,
