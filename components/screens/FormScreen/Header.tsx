@@ -1,6 +1,6 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 interface HeaderProps {
@@ -18,6 +18,23 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
   const insets = useSafeAreaInsets();
 
+  const showExitAlert = () => {
+    Alert.alert(
+      "Är du säker på att du vill avsluta?",
+      "Informationen du angett kommer inte sparas.",
+      [
+        {
+          text: "Avbryt",
+          "style": "cancel"
+        },
+        {
+          text: "OK",
+          onPress: handleClosePress,
+        }
+      ]
+    );
+  }
+
   return (
     <View style={{ paddingTop: insets.top }}>
       <View style={styles.header}>
@@ -33,7 +50,7 @@ const Header: React.FC<HeaderProps> = ({
         </View>
 
         <Text style={styles.title}>{title}</Text>
-        <TouchableOpacity onPress={handleClosePress} style={styles.button}>
+        <TouchableOpacity onPress={showExitAlert} style={styles.button}>
           <Text style={styles.buttonText}>Avbryt</Text>
         </TouchableOpacity>
       </View>
