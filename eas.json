@@ -9,7 +9,7 @@
       "developmentClient": true,
       "distribution": "internal",
       "env": {
-        "EXPO_PUBLIC_WEBVIEW_URL": "https://helsingborg-stad.github.io/ett-battre-helsingborg-web/",
+        "EXPO_PUBLIC_WEBVIEW_URL": "https://helsingborg-stad.github.io/ett-battre-helsingborg-web/?app=1",
         "EXPO_PUBLIC_DISTURBANCE_API": "https://alarm.helsingborg.io/json/wp/v2/disturbances/?place=2"
       }
     },
@@ -19,13 +19,13 @@
       },
       "distribution": "internal",
       "env": {
-        "EXPO_PUBLIC_WEBVIEW_URL": "https://helsingborg-stad.github.io/ett-battre-helsingborg-web/",
+        "EXPO_PUBLIC_WEBVIEW_URL": "https://helsingborg-stad.github.io/ett-battre-helsingborg-web/?app=1",
         "EXPO_PUBLIC_DISTURBANCE_API": "https://alarm.helsingborg.io/json/wp/v2/disturbances/?place=2"
       }
     },
     "production": {
       "env" : {
-        "EXPO_PUBLIC_WEBVIEW_URL": "https://helsingborg-stad.github.io/ett-battre-helsingborg-web/",
+        "EXPO_PUBLIC_WEBVIEW_URL": "https://helsingborg-stad.github.io/ett-battre-helsingborg-web/?app=1",
         "EXPO_PUBLIC_DISTURBANCE_API": "https://alarm.helsingborg.io/json/wp/v2/disturbances/?place=2"
       }
     }
