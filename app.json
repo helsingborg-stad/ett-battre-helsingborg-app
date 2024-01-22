@@ -36,7 +36,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FDDDE5"
       },
-      "package": "com.xxxxxxx.EttBattreHelsingborg"
+      "package": "se.helsingborg.EttBattreHelsingborg"
     },
     "web": {
       "favicon": "./assets/favicon.png"
