@@ -42,7 +42,6 @@ const WebView: React.FC<WebViewProps> = ({ url }) => {
       }
     }
   };
-
   // Open clickable links in browser
   const handleShouldStartLoadWithRequest = (event: { url: string }) => {
     const { url: linkUrl } = event;
@@ -75,6 +74,7 @@ const WebView: React.FC<WebViewProps> = ({ url }) => {
       }}
       onMessage={(event) => handleMessage(event)}
       injectedJavaScript={injectedJavaScript}
+      setSupportMultipleWindows={false}
       onShouldStartLoadWithRequest={(event) => handleShouldStartLoadWithRequest(event)}
     />
   );
