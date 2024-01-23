@@ -18,14 +18,14 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.infracontrol.helsingborg",
-      "buildNumber": "4",
+      "buildNumber": "9",
       "infoPlist": {
         "NSCameraUsageDescription": "Denna app behöver åtkomst till kameran för att kunna ladda upp bilder till ärenden.",
         "NSLocationWhenInUseUsageDescription": "Denna app behöver åtkomst till din plats för att visa din plats på karta."
       }
     },
     "android": {
-      "versionCode": 1,
+      "versionCode": 4,
       "permissions": [
         "INTERNET",
         "ACCESS_COARSE_LOCATION",
