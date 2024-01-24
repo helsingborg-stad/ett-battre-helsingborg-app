@@ -1,5 +1,5 @@
 import * as Linking from 'expo-linking';
-import React from 'react';
+import React, { useCallback } from 'react';
 import { WebView as RNWebView } from 'react-native-webview';
 
 import { useWebView } from './WebViewContext';
@@ -54,13 +54,20 @@ const WebView: React.FC<WebViewProps> = ({ url }) => {
     return true;
   };
 
+  // Inject JavaScript after the web content has loaded
+  const onLoadEnd = useCallback(() => {
+    if (webViewRef.current) {
+      webViewRef.current.injectJavaScript(injectedJavaScript);
+    }
+  }, [webViewRef, injectedJavaScript]);
+
   return (
     <RNWebView
       key={viewKey}
       ref={webViewRef}
       originWhitelist={['*']}
-      source={{
-        uri: url,
+      source={{ 
+        uri: url 
       }}
       javaScriptEnabled
       domStorageEnabled
@@ -68,12 +75,12 @@ const WebView: React.FC<WebViewProps> = ({ url }) => {
       allowFileAccess
       cacheEnabled={false}
       allowsFullscreenVideo
-      style={{
-        flex: 1,
-        backgroundColor: 'transparent',
+      style={{ 
+        flex: 1, 
+        backgroundColor: 'transparent', 
       }}
       onMessage={(event) => handleMessage(event)}
-      injectedJavaScript={injectedJavaScript}
+      onLoadEnd={onLoadEnd}
       setSupportMultipleWindows={false}
       onShouldStartLoadWithRequest={(event) => handleShouldStartLoadWithRequest(event)}
     />
