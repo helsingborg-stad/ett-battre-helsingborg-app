@@ -1,7 +1,7 @@
 {
   "cli": {
     "version": ">= 3.14.0",
-    "appVersionSource": "local",
+    "appVersionSource": "remote",
     "promptToConfigurePushNotifications": false
   },
   "build": {
@@ -24,7 +24,7 @@
       }
     },
     "production": {
-      "env" : {
+      "env": {
         "EXPO_PUBLIC_WEBVIEW_URL": "https://helsingborg-stad.github.io/ett-battre-helsingborg-web/?app=1",
         "EXPO_PUBLIC_DISTURBANCE_API": "https://alarm.helsingborg.io/json/wp/v2/disturbances/?place=2"
       }

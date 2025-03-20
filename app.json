@@ -2,7 +2,7 @@
   "expo": {
     "name": "Ett bättre Helsingborg",
     "slug": "ett-battre-helsingborg",
-    "version": "2.0.3",
+    "version": "2.0.4",
     "owner": "helsingborg",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -12,9 +12,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#FDDDE5"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.infracontrol.helsingborg",
@@ -45,6 +43,7 @@
       "eas": {
         "projectId": "db5f87e0-9ae7-49af-a7c2-a9da90f0db27"
       }
-    }
+    },
+    "plugins": ["expo-font"]
   }
 }
