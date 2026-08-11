@@ -1,3 +1,4 @@
 packages:
   - "."
+nodeLinker: hoisted
 minimumReleaseAge: 10080
