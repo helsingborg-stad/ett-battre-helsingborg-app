@@ -2,7 +2,7 @@
   "expo": {
     "name": "Ett bättre Helsingborg",
     "slug": "ett-battre-helsingborg",
-    "version": "2.0.4",
+    "version": "2.0.5",
     "owner": "helsingborg",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -25,7 +25,6 @@
       }
     },
     "android": {
-      "versionCode": 1,
       "permissions": [
         "INTERNET",
         "ACCESS_COARSE_LOCATION",
