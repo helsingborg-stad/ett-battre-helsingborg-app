@@ -46,6 +46,9 @@
         "projectId": "db5f87e0-9ae7-49af-a7c2-a9da90f0db27"
       }
     },
-    "plugins": ["expo-font"]
+    "plugins": [
+      "expo-font",
+      ["expo-build-properties", { "android": { "targetSdkVersion": 35 } }]
+    ]
   }
 }
