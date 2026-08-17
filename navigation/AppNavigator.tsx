@@ -18,6 +18,7 @@ const AppNavigator = (): React.JSX.Element => {
   return (
     <NavigationContainer>
       <Tab.Navigator
+        id="RootTab"
         initialRouteName="Home"
         screenOptions={{
           tabBarStyle: { display: 'none' },
