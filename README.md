@@ -6,6 +6,8 @@
 - [Getting Started](#getting-started)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Build Profiles](#build-profiles)
+- [Versioning](#versioning)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -18,19 +20,35 @@ In the app, residents can notify about things related to our streets, squares, b
 
 ## Getting Started
 Before you begin using the app, make sure you have the following prerequisites:
-- Node.js and npm installed
-- Expo CLI (install using `npm install -g expo-cli`)
+- Node.js installed
+- pnpm installed (`npm install -g pnpm`)
+- EAS CLI (`pnpm add -g eas-cli`)
 
 ## Installation
 1. Clone this repository: `git clone https://github.com/helsingborg-stad/ett-battre-helsingborg-app.git`
 2. Navigate to the app directory: `cd ett-battre-helsingborg-app`
-3. Install dependencies: `npm install`
+3. Install dependencies: `pnpm install`
 
 ## Usage
 To run the app locally, follow these steps:
 1. Change the file **.env-example** name to **.env** and edit the variables.
-2. Start the Expo development server: `npm start` or `expo start`
+2. Start the Expo development server: `pnpm start`
 3. Scan the QR code with the Expo Go app (available on iOS and Android) or run the app in an emulator.
+
+## Build Profiles
+Build profiles are configured in `eas.json`:
+
+| Profile | Output | Distribution | Purpose |
+|---|---|---|---|
+| `development` | Dev client | internal | Local development with dev tools |
+| `preview` | APK | internal | Testing on devices |
+| `internal` | AAB | store | Google Play internal testing track |
+| `production` | AAB | store | Google Play production release |
+
+## Versioning
+Android `versionCode` is managed remotely by EAS. Before building a new release, set the versionCode:
+
+`pnpm exec eas build:version:set --platform android`
 
 ## Contributing
 We welcome contributions to improve this app! If you'd like to contribute, follow these steps:
