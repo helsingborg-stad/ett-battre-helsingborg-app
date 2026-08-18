@@ -47,7 +47,7 @@
     },
     "plugins": [
       "expo-font",
-      ["expo-build-properties", { "android": { "targetSdkVersion": 35 } }]
+      "expo-build-properties"
     ]
   }
 }
